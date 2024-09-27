@@ -2,6 +2,9 @@ package net.zoey.cozyliving;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.zoey.cozyliving.block.ModBlocks;
+import net.zoey.cozyliving.item.ModItemGroups;
+import net.zoey.cozyliving.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,6 +21,9 @@ public class CozyLiving implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
+		ModItemGroups.registerItemGroups();
 
 		LOGGER.info("Cozy Living Initializing!");
 	}
