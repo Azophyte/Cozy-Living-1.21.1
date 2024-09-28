@@ -3,11 +3,11 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "cozyliving:benitoite_block"
+      "item": "cozyliving:raspberry_rhodolite_block"
     }
   ],
   "result": {
     "count": 9,
-    "id": "cozyliving:benitoite"
+    "id": "cozyliving:raspberry_rhodolite"
   }
 }

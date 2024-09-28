@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "cozyliving:benitoite"
+      "item": "cozyliving:raspberry_rhodolite"
     }
   },
   "pattern": [
@@ -13,6 +13,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "cozyliving:benitoite_block"
+    "id": "cozyliving:raspberry_rhodolite_block"
   }
 }

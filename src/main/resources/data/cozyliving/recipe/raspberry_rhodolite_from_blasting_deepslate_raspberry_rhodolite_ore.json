@@ -3,11 +3,11 @@
   "category": "misc",
   "cookingtime": 100,
   "experience": 20.0,
-  "group": "benitoite",
+  "group": "raspberry_rhodolite",
   "ingredient": {
-    "item": "cozyliving:benitoite_ore"
+    "item": "cozyliving:deepslate_raspberry_rhodolite_ore"
   },
   "result": {
-    "id": "cozyliving:benitoite"
+    "id": "cozyliving:raspberry_rhodolite"
   }
 }

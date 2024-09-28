@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_deepslate_raspberry_rhodolite_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "cozyliving:deepslate_raspberry_rhodolite_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "cozyliving:raspberry_rhodolite_from_blasting_deepslate_raspberry_rhodolite_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_deepslate_raspberry_rhodolite_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cozyliving:raspberry_rhodolite_from_blasting_deepslate_raspberry_rhodolite_ore"
+    ]
+  }
+}
