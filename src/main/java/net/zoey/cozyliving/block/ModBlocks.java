@@ -10,7 +10,6 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.zoey.cozyliving.CozyLiving;
-import net.minecraft.block.Blocks;
 
 public class ModBlocks {
 
