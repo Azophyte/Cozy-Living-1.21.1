@@ -5,6 +5,9 @@ import net.fabricmc.api.ModInitializer;
 import net.zoey.cozyliving.block.ModBlocks;
 import net.zoey.cozyliving.item.ModItemGroups;
 import net.zoey.cozyliving.item.ModItems;
+import net.zoey.cozyliving.util.ModLootTableModifiers;
+import net.zoey.cozyliving.world.gen.ModFeatureGeneration;
+import net.zoey.cozyliving.world.gen.raspberry_bush_patches.RaspberryBushesFeature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,10 +24,20 @@ public class CozyLiving implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+
+		LOGGER.info("Cozy Living Initializing!");
+
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
+		ModLootTableModifiers.modifyLootTables();
 
-		LOGGER.info("Cozy Living Initializing!");
+		RaspberryBushesFeature.registerRaspberryBushesFeature();
+		ModFeatureGeneration.generateVegetation();
+		ModFeatureGeneration.generateOres();
+
+		LOGGER.info("Cozy Living Initialized! :D");
+
+
 	}
 }

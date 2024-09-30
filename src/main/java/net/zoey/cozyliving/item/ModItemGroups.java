@@ -15,18 +15,28 @@ public class ModItemGroups {
 
     public static final ItemGroup COZYLIVINGITEMGROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(CozyLiving.MOD_ID, "itemgroup"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.RASPBERRY_RHODOLITE))
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.RASPBERRY))
                     .displayName(Text.translatable("itemgroup.cozyliving.itemgroup"))
                     .entries((displayContext, entries) -> {
 
-                        entries.add(ModItems.RASPBERRY_RHODOLITE);
-                        entries.add(ModBlocks.RASPBERRY_RHODOLITE_BLOCK);
-                        entries.add(ModBlocks.RASPBERRY_RHODOLITE_ORE);
-                        entries.add(ModBlocks.DEEPSLATE_RASPBERRY_RHODOLITE_ORE);
+                        //EDIBLE ITEMS
+                        entries.add(ModItems.RASPBERRY);
+                        entries.add(ModItems.CANDY_APPLE);
+                        entries.add(ModItems.CINNAMON_BUN);
+                        entries.add(ModItems.HEAVY_CREAM);
+
+                        //MATERIALS
+                        entries.add(ModItems.CINNAMON_STICK);
+
+                        //GEMSTONES
                         entries.add(ModItems.BENITOITE);
                         entries.add(ModBlocks.BENITOITE_BLOCK);
                         entries.add(ModBlocks.BENITOITE_ORE);
                         entries.add(ModBlocks.DEEPSLATE_BENITOITE_ORE);
+                        entries.add(ModItems.RASPBERRY_RHODOLITE);
+                        entries.add(ModBlocks.RASPBERRY_RHODOLITE_BLOCK);
+                        entries.add(ModBlocks.RASPBERRY_RHODOLITE_ORE);
+                        entries.add(ModBlocks.DEEPSLATE_RASPBERRY_RHODOLITE_ORE);
 
                     }).build());
 

@@ -10,6 +10,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.zoey.cozyliving.CozyLiving;
+import net.zoey.cozyliving.block.custom.RaspberryBushBlock;
 
 public class ModBlocks {
 
@@ -28,8 +29,15 @@ public class ModBlocks {
     public static final Block DEEPSLATE_BENITOITE_ORE = registerBlock("deepslate_benitoite_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(16, 24), AbstractBlock.Settings.create().mapColor(MapColor.DEEPSLATE_GRAY).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(5F, 3.5F)));
 
+    public static final Block RASPBERRY_BUSH = registerBlockWithoutItem("raspberry_bush",
+            new RaspberryBushBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
+        return Registry.register(Registries.BLOCK, Identifier.of(CozyLiving.MOD_ID, name), block);
+    }
+
+    private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, Identifier.of(CozyLiving.MOD_ID, name), block);
     }
 
