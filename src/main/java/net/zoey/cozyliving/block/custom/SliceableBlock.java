@@ -46,8 +46,6 @@ public class SliceableBlock extends Block {
         super(settings);
         sliceItem = newSliceItem;
 
-        sliceItem = ModItems.GLOWBERRY_TART_SLICE;
-
         foodComponent = newFoodComponent;
         statusEffectEntryList = newFoodComponent.effects();
 
