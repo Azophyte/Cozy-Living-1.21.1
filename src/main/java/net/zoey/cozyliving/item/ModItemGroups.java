@@ -24,6 +24,8 @@ public class ModItemGroups {
                         entries.add(ModItems.CANDY_APPLE);
                         entries.add(ModItems.CINNAMON_BUN);
                         entries.add(ModItems.HEAVY_CREAM);
+                        entries.add(ModItems.ROASTED_PUMPKIN_SEEDS);
+                        entries.add(ModItems.ROASTED_MELON_SEEDS);
 
                         //MATERIALS
                         entries.add(ModItems.CINNAMON_STICK);

@@ -17,7 +17,7 @@ public class ModTooltipItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("tooltip.cozyliving." + translationKey));
-        super.appendTooltip(stack, context, tooltip, type);
+            tooltip.add(Text.translatable("tooltip.cozyliving." + translationKey));
     }
+
 }

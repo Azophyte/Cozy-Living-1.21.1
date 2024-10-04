@@ -33,6 +33,7 @@ import net.minecraft.world.event.GameEvent;
 import net.minecraft.world.event.GameEvent.Emitter;
 import net.zoey.cozyliving.item.ModItems;
 import net.zoey.cozyliving.block.ModBlocks;
+import net.minecraft.entity.LivingEntity;
 
 import static net.minecraft.block.enums.DoubleBlockHalf.LOWER;
 import static net.minecraft.block.enums.DoubleBlockHalf.UPPER;
@@ -119,6 +120,7 @@ public class RaspberryBushBlock extends Block implements Fertilizable {
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
         return state.get(AGE) < 4;
     }
+
 
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         int myAge = world.getBlockState(pos).get(AGE);

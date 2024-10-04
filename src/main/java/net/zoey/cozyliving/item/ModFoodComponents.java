@@ -3,6 +3,7 @@ package net.zoey.cozyliving.item;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 
+import static net.minecraft.entity.effect.StatusEffects.GLOWING;
 import static net.minecraft.entity.effect.StatusEffects.REGENERATION;
 
 public class ModFoodComponents {
@@ -24,5 +25,15 @@ public class ModFoodComponents {
     public static final FoodComponent HEAVY_CREAM = new FoodComponent.Builder()
             .nutrition(3)
             .saturationModifier(0.5f)
+            .build();
+    public static final FoodComponent ROASTED_SEEDS = new FoodComponent.Builder()
+            .nutrition(2)
+            .saturationModifier(0.25f)
+            .snack()
+            .build();
+    public static final FoodComponent GLOWBERRY_TART = new FoodComponent.Builder()
+            .nutrition(6)
+            .saturationModifier(0.75f)
+            .statusEffect(new StatusEffectInstance(GLOWING, 150, 0), 1)
             .build();
 }

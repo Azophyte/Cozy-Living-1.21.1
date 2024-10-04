@@ -40,6 +40,20 @@ public class ModItems {
     public static final Item CANDY_APPLE = registerItem("candy_apple",
             new CandyAppleItem(new Item.Settings().food(ModFoodComponents.CANDY_APPLE), "candy_apple"));
 
+    public static final Item ROASTED_PUMPKIN_SEEDS = registerItem("roasted_pumpkin_seeds",
+            new ModTooltipItem(new Item.Settings().food(ModFoodComponents.ROASTED_SEEDS), "roasted_pumpkin_seeds"));
+
+    public static final Item ROASTED_MELON_SEEDS = registerItem("roasted_melon_seeds",
+            new ModTooltipItem(new Item.Settings().food(ModFoodComponents.ROASTED_SEEDS), "roasted_melon_seeds"));
+
+    //EDIBLE BLOCK ITEMS
+
+    public static final Item GLOWBERRY_TART_SLICE = registerItem("glowberry_tart_slice",
+            new ModTooltipItem(new Item.Settings().food(ModFoodComponents.GLOWBERRY_TART), "glowberry_tart_slice"));
+
+    public static final Item GLOWBERRY_TART = registerItem("glowberry_tart",
+            new ModAliasedBlockToolTipItem(ModBlocks.GLOWBERRY_TART, new Item.Settings().food(ModFoodComponents.GLOWBERRY_TART), "glowberry_tart"));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(CozyLiving.MOD_ID, name), item);
     }
