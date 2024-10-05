@@ -12,7 +12,7 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.zoey.cozyliving.CozyLiving;
 import net.zoey.cozyliving.block.custom.RaspberryBushBlock;
 import net.zoey.cozyliving.block.custom.SliceableBlock;
-import net.zoey.cozyliving.item.ModFoodComponents;
+import net.zoey.cozyliving.foodComponents.ModFoodComponents;
 import net.zoey.cozyliving.item.ModItems;
 
 public class ModBlocks {
@@ -36,7 +36,7 @@ public class ModBlocks {
             new RaspberryBushBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)));
 
     public static final Block GLOWBERRY_TART = registerBlockWithoutItem("glowberry_tart",
-            new SliceableBlock(ModItems.GLOWBERRY_TART_SLICE, ModFoodComponents.GLOWBERRY_TART,
+            new SliceableBlock(ModItems.GLOWBERRY_TART_SLICE.asItem(), ModFoodComponents.GLOWBERRY_TART,
                     AbstractBlock.Settings.copy(Blocks.CAKE)));
 
     private static Block registerBlock(String name, Block block) {

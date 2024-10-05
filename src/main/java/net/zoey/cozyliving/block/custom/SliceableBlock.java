@@ -1,19 +1,18 @@
 package net.zoey.cozyliving.block.custom;
 
 import net.minecraft.block.*;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -25,7 +24,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.event.GameEvent;
 import net.minecraft.block.Blocks;
+import net.zoey.cozyliving.CozyLiving;
 import net.zoey.cozyliving.item.ModItems;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,12 +43,10 @@ public class SliceableBlock extends Block {
     public static List<StatusEffectInstance> statusEffectInstanceList = new ArrayList<>() {
     };
 
-    public SliceableBlock(Item newSliceItem, FoodComponent newFoodComponent, Settings settings) {
+
+    public SliceableBlock(@NotNull Item newSliceItem, @NotNull FoodComponent newFoodComponent, Settings settings) {
         super(settings);
         sliceItem = newSliceItem;
-
-        sliceItem = ModItems.GLOWBERRY_TART_SLICE;
-
         foodComponent = newFoodComponent;
         statusEffectEntryList = newFoodComponent.effects();
 
@@ -56,7 +55,6 @@ public class SliceableBlock extends Block {
                 statusEffectInstanceList.add(statusEffectEntry.effect());
             }
         }
-
     }
 
     private static final VoxelShape slice0 = Block.createCuboidShape(8, 0, 2, 14, 4, 8);
@@ -68,26 +66,26 @@ public class SliceableBlock extends Block {
         switch (state.get(BITES)){
             case 1 ->{
                 switch (state.get(FACING)){
-                    case NORTH -> {return VoxelShapes.union(slice1,slice2,slice3);}
-                    case EAST  -> {return VoxelShapes.union(slice0,slice1,slice2);}
-                    case SOUTH -> {return VoxelShapes.union(slice0,slice1,slice3);}
-                    case WEST  -> {return VoxelShapes.union(slice0,slice2,slice3);}
+                    case EAST -> {return VoxelShapes.union(slice1,slice2,slice3);}
+                    case SOUTH  -> {return VoxelShapes.union(slice0,slice1,slice2);}
+                    case WEST -> {return VoxelShapes.union(slice0,slice1,slice3);}
+                    case NORTH  -> {return VoxelShapes.union(slice0,slice2,slice3);}
                 }
             }
             case 2 ->{
                 switch (state.get(FACING)){
-                    case NORTH  -> {return VoxelShapes.union(slice1,slice2);}
-                    case EAST -> {return VoxelShapes.union(slice0,slice1);}
-                    case SOUTH  -> {return VoxelShapes.union(slice0,slice3);}
-                    case WEST -> {return VoxelShapes.union(slice2,slice3);}
+                    case EAST  -> {return VoxelShapes.union(slice1,slice2);}
+                    case SOUTH -> {return VoxelShapes.union(slice0,slice1);}
+                    case WEST  -> {return VoxelShapes.union(slice0,slice3);}
+                    case NORTH -> {return VoxelShapes.union(slice2,slice3);}
                 }
             }
             case 3 ->{
                 switch (state.get(FACING)) {
-                    case NORTH -> {return slice1;}
-                    case EAST ->  {return slice0;}
-                    case SOUTH -> {return slice3;}
-                    case WEST ->  {return slice2;}
+                    case EAST -> {return slice1;}
+                    case SOUTH ->  {return slice0;}
+                    case WEST -> {return slice3;}
+                    case NORTH ->  {return slice2;}
                 }
             }
         }
@@ -105,10 +103,9 @@ public class SliceableBlock extends Block {
 
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         ItemStack itemStack = player.getStackInHand(Hand.MAIN_HAND);
-
+        //player.sendMessage(Text.literal("The slice item is: " + sliceItem.toString()));
         if (itemStack.getItem() instanceof SwordItem) { //If the player is holding a sword:
-
-            player.giveItemStack(new ItemStack(sliceItem));
+            player.getInventory().insertStack(new ItemStack(sliceItem));
             world.playSound(null, pos, SoundEvents.BLOCK_WOOL_BREAK,
                     SoundCategory.PLAYERS, 1f, 1f);
             if (state.get(BITES) < 3){
@@ -117,9 +114,10 @@ public class SliceableBlock extends Block {
                 world.removeBlock(pos, false);
                 world.emitGameEvent(player, GameEvent.BLOCK_DESTROY, pos);
             }
+            return ActionResult.SUCCESS;
         }
+        if (world.isClient || !(itemStack.getItem() instanceof DebugStickItem)) {
 
-        if (world.isClient) {
             if (tryEat(world, pos, state, player).isAccepted()) {
                 return ActionResult.SUCCESS;
             }
@@ -135,11 +133,12 @@ public class SliceableBlock extends Block {
         if (!player.canConsume(false)) {
             return ActionResult.PASS;
         } else {
-            player.getHungerManager().add(foodComponent.nutrition(), foodComponent.saturation());
+            //player.getHungerManager().add(foodComponent.nutrition(), foodComponent.saturation());
+            player.getHungerManager().eat(foodComponent);
 
             if (!statusEffectInstanceList.isEmpty()){ //If not empty
                 for (StatusEffectInstance statusEffect : statusEffectInstanceList) {
-                    player.addStatusEffect(statusEffect);
+                    player.addStatusEffect(new StatusEffectInstance(statusEffect));
                 }
             }
 

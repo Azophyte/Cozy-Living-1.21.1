@@ -27,6 +27,10 @@ public class ModItemGroups {
                         entries.add(ModItems.ROASTED_PUMPKIN_SEEDS);
                         entries.add(ModItems.ROASTED_MELON_SEEDS);
 
+                        //EDIBLE BLOCK ITEMS AND THEIR SLICES
+                        entries.add(ModItems.GLOWBERRY_TART_SLICE);
+                        entries.add(ModItems.GLOWBERRY_TART);
+
                         //MATERIALS
                         entries.add(ModItems.CINNAMON_STICK);
 
@@ -39,6 +43,9 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RASPBERRY_RHODOLITE_BLOCK);
                         entries.add(ModBlocks.RASPBERRY_RHODOLITE_ORE);
                         entries.add(ModBlocks.DEEPSLATE_RASPBERRY_RHODOLITE_ORE);
+
+                        //DEBUG
+                        entries.add(ModItems.WAND_OF_HUNGER);
 
                     }).build());
 
