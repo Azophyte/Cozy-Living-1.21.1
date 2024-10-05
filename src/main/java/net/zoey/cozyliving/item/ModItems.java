@@ -35,7 +35,7 @@ public class ModItems {
             new ModTooltipItem(new Item.Settings().food(ModFoodComponents.CINNAMON_BUN), "cinnamon_bun"));
 
     public static final Item HEAVY_CREAM = registerItem("heavy_cream",
-            new HeavyCreamItem(new Item.Settings().food(ModFoodComponents.HEAVY_CREAM), "heavy_cream"));
+            new BottledIngredientItem(new Item.Settings().food(ModFoodComponents.HEAVY_CREAM), 90,"heavy_cream"));
 
     public static final Item CANDY_APPLE = registerItem("candy_apple",
             new CandyAppleItem(new Item.Settings().food(ModFoodComponents.CANDY_APPLE), "candy_apple"));
@@ -48,6 +48,9 @@ public class ModItems {
 
     public static final Item GLOWBERRY_TART_SLICE = registerItem("glowberry_tart_slice",
             new ModTooltipItem(new Item.Settings().food(ModFoodComponents.GLOWBERRY_TART), "glowberry_tart_slice"));
+
+    public static final Item APPLE_SAUCE = registerItem("apple_sauce",
+            new BottledIngredientItem(new Item.Settings().food(ModFoodComponents.APPLE_SAUCE), 15, "apple_sauce"));
 
     //BLOCK ITEMS (MUST BE CALLED LAST, ELSE REQUIRED ITEMS MAY NOT BE REGISTERED
 

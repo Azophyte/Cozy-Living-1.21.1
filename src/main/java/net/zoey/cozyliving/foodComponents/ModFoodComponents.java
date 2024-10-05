@@ -38,6 +38,12 @@ public class ModFoodComponents {
             .statusEffect(new StatusEffectInstance(GLOWING, 150, 0), 1)
             .build();
 
+    public static final FoodComponent APPLE_SAUCE = new FoodComponent.Builder()
+            .nutrition(1)
+            .saturationModifier(1)
+            .snack()
+            .build();
+
     public static void registerModFoodComponents() {
         CozyLiving.LOGGER.info("Registering Mod Food Components for " + CozyLiving.MOD_ID);
     }

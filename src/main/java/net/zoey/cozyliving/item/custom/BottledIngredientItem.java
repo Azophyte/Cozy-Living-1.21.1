@@ -20,12 +20,14 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class HeavyCreamItem extends Item {
+public class BottledIngredientItem extends Item {
     String translationKey;
+    int drinkingTime;
 
-    public HeavyCreamItem(Settings settings, String translationID) {
+    public BottledIngredientItem(Settings settings, int timeToDrink, String translationID) {
         super(settings);
         translationKey = translationID;
+        drinkingTime = timeToDrink;
     }
 
     @Override
@@ -58,7 +60,7 @@ public class HeavyCreamItem extends Item {
     }
 
     public int getMaxUseTime(ItemStack stack, LivingEntity user) {
-        return 90;
+        return drinkingTime;
     }
 
     public UseAction getUseAction(ItemStack stack) {

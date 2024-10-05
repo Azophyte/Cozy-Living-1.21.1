@@ -20,12 +20,13 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
 
                         //EDIBLE ITEMS
-                        entries.add(ModItems.RASPBERRY);
+                        entries.add(ModItems.APPLE_SAUCE);
                         entries.add(ModItems.CANDY_APPLE);
                         entries.add(ModItems.CINNAMON_BUN);
                         entries.add(ModItems.HEAVY_CREAM);
-                        entries.add(ModItems.ROASTED_PUMPKIN_SEEDS);
+                        entries.add(ModItems.RASPBERRY);
                         entries.add(ModItems.ROASTED_MELON_SEEDS);
+                        entries.add(ModItems.ROASTED_PUMPKIN_SEEDS);
 
                         //EDIBLE BLOCK ITEMS AND THEIR SLICES
                         entries.add(ModItems.GLOWBERRY_TART_SLICE);

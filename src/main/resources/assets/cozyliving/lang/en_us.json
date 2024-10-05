@@ -20,6 +20,7 @@
   "item.cozyliving.glowberry_tart": "Glowberry Tart",
   "item.cozyliving.glowberry_tart_slice": "Slice of Glowberry Tart",
   "item.cozyliving.wand_of_hunger": "Wand of Hunger",
+  "item.cozyliving.apple_sauce": "Apple Sauce",
   "itemgroup.cozyliving.itemgroup": "Cozy Living",
   "tooltip.cozyliving.benitoite": "§7Fluorescent!",
   "tooltip.cozyliving.candy_apple": "§7Don't eat the stick",
@@ -34,6 +35,7 @@
   "tooltip.cozyliving.glowberry_tart": "§7Brightens up your day",
   "tooltip.cozyliving.glowberry_tart_slice": "§7Tangy and delicious!",
   "tooltip.cozyliving.wand_of_hunger": "§cDebug item, sets hunger to one",
+  "tooltip.cozyliving.apple_sauce": "§7Versatile baking ingredient",
   "trim_material.cozyliving.benitoite": "Benitoite",
   "trim_material.cozyliving.raspberry_rhodolite": "Raspberry Rhodolite"
 }
