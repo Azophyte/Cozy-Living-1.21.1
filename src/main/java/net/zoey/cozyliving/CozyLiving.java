@@ -3,6 +3,7 @@ package net.zoey.cozyliving;
 import net.fabricmc.api.ModInitializer;
 
 import net.zoey.cozyliving.block.ModBlocks;
+import net.zoey.cozyliving.foodComponents.ModFoodComponents;
 import net.zoey.cozyliving.item.ModItemGroups;
 import net.zoey.cozyliving.item.ModItems;
 import net.zoey.cozyliving.util.ModLootTableModifiers;
@@ -26,7 +27,7 @@ public class CozyLiving implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Cozy Living Initializing!");
-
+		ModFoodComponents.registerModFoodComponents();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
