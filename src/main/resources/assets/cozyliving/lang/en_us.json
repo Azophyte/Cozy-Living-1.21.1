@@ -19,6 +19,7 @@
   "item.cozyliving.roasted_pumpkin_seeds": "Roasted Pumpkin Seeds",
   "item.cozyliving.glowberry_tart": "Glowberry Tart",
   "item.cozyliving.glowberry_tart_slice": "Slice of Glowberry Tart",
+  "item.cozyliving.wand_of_hunger": "Wand of Hunger",
   "itemgroup.cozyliving.itemgroup": "Cozy Living",
   "tooltip.cozyliving.benitoite": "§7Fluorescent!",
   "tooltip.cozyliving.candy_apple": "§7Don't eat the stick",
@@ -32,6 +33,7 @@
   "tooltip.cozyliving.roasted_pumpkin_seeds": "§7Nutty and savoury",
   "tooltip.cozyliving.glowberry_tart": "§7Brightens up your day",
   "tooltip.cozyliving.glowberry_tart_slice": "§7Tangy and delicious!",
+  "tooltip.cozyliving.wand_of_hunger": "§cDebug item, sets hunger to one",
   "trim_material.cozyliving.benitoite": "Benitoite",
   "trim_material.cozyliving.raspberry_rhodolite": "Raspberry Rhodolite"
 }
