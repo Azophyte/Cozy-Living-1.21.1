@@ -1,7 +1,8 @@
-package net.zoey.cozyliving.item;
+package net.zoey.cozyliving.foodComponents;
 
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.zoey.cozyliving.CozyLiving;
 
 import static net.minecraft.entity.effect.StatusEffects.GLOWING;
 import static net.minecraft.entity.effect.StatusEffects.REGENERATION;
@@ -36,4 +37,8 @@ public class ModFoodComponents {
             .saturationModifier(0.75f)
             .statusEffect(new StatusEffectInstance(GLOWING, 150, 0), 1)
             .build();
+
+    public static void registerModFoodComponents() {
+        CozyLiving.LOGGER.info("Registering Mod Food Components for " + CozyLiving.MOD_ID);
+    }
 }
