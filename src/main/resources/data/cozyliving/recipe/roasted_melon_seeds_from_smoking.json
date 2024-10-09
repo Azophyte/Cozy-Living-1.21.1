@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "minecraft:melon_seeds"
+  },
+  "result": {
+    "id": "cozyliving:roasted_melon_seeds"
+  }
+}

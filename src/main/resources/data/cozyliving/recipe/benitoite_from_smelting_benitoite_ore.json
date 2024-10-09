@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 20.0,
+  "group": "benitoite",
+  "ingredient": {
+    "item": "cozyliving:benitoite_ore"
+  },
+  "result": {
+    "id": "cozyliving:benitoite"
+  }
+}

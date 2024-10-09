@@ -1,0 +1,9 @@
+{
+  "asset_name": "benitoite",
+  "description": {
+    "color": "#3C34BC",
+    "translate": "trim_material.cozyliving.benitoite"
+  },
+  "ingredient": "cozyliving:benitoite",
+  "item_model_index": 0.260
+}
