@@ -15,6 +15,7 @@ import net.zoey.cozyliving.block.ModBlocks;
 import net.zoey.cozyliving.entity.ModBoats;
 import net.zoey.cozyliving.foodComponents.ModFoodComponents;
 import net.zoey.cozyliving.item.custom.*;
+import net.minecraft.item.Items;
 
 
 public class ModItems {

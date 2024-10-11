@@ -9,9 +9,13 @@ import net.zoey.cozyliving.entity.ModBoats;
 import net.zoey.cozyliving.foodComponents.ModFoodComponents;
 import net.zoey.cozyliving.item.ModItemGroups;
 import net.zoey.cozyliving.item.ModItems;
+import net.zoey.cozyliving.sound.ModSounds;
+import net.zoey.cozyliving.util.ModDamageTypes;
 import net.zoey.cozyliving.util.ModLootTableModifiers;
 import net.zoey.cozyliving.world.gen.ModFeatureGeneration;
+import net.zoey.cozyliving.world.gen.coconut_tree.CoconutTreeFeature;
 import net.zoey.cozyliving.world.gen.raspberry_bush_patches.RaspberryBushesFeature;
+import net.zoey.cozyliving.world.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,15 +34,22 @@ public class CozyLiving implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Cozy Living Initializing!");
+		ModDamageTypes.registerDamageTypes();
+		ModSounds.registerSounds();
 		ModFoodComponents.registerModFoodComponents();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
 		ModLootTableModifiers.modifyLootTables();
 		RaspberryBushesFeature.registerRaspberryBushesFeature();
+		CoconutTreeFeature.registerCoconutTreeFeature();
+		ModTrunkPlacerTypes.register();
+
 		ModFeatureGeneration.generateVegetation();
 		ModFeatureGeneration.generateOres();
+		ModFeatureGeneration.generateTrees();
 		ModBoats.registerBoats();
+
 
 		StrippableBlockRegistry.register(ModBlocks.COCONUT_LOG, ModBlocks.STRIPPED_COCONUT_LOG);
 		StrippableBlockRegistry.register(ModBlocks.COCONUT_WOOD, ModBlocks.STRIPPED_COCONUT_WOOD);

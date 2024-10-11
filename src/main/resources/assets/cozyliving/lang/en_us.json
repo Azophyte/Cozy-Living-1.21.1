@@ -12,12 +12,15 @@
   "block.cozyliving.coconut_wood": "Coconut Wood",
   "block.cozyliving.stripped_coconut_log": "Stripped Coconut Log",
   "block.cozyliving.stripped_coconut_wood": "Stripped Coconut Wood",
+  "block.cozyliving.coconut_plant": "Coconut",
+  "block.cozyliving.coconut": "Coconut",
   "block.cozyliving.coconut_button": "Coconut Button",
   "block.cozyliving.coconut_door": "Coconut Door",
   "block.cozyliving.coconut_fence": "Coconut Fence",
   "block.cozyliving.coconut_fence_gate": "Coconut Fence Gate",
   "block.cozyliving.coconut_hanging_sign": "Coconut Hanging Sign",
   "block.cozyliving.coconut_leaves": "Coconut Leaves",
+  "block.cozyliving.coconut_leaves_corner": "Coconut Leaves",
   "block.cozyliving.coconut_pressure_plate": "Coconut Pressure Plate",
   "block.cozyliving.coconut_sapling": "Coconut Sapling",
   "block.cozyliving.coconut_standing_sign": "Coconut Sign",
@@ -26,6 +29,8 @@
   "block.cozyliving.coconut_trapdoor": "Coconut Trapdoor",
   "block.cozyliving.coconut_wall_hanging_sign": "Coconut Wall Hanging Sign",
   "block.cozyliving.coconut_wall_sign": "Coconut Wall Sign",
+  "item.cozyliving.coconut_sapling": "Coconut Sapling",
+  "item.cozyliving.coconut": "Coconut",
   "item.cozyliving.coconut_sign": "Coconut Sign",
   "item.cozyliving.coconut_hanging_sign": "Coconut Hanging Sign",
   "item.cozyliving.coconut_boat": "Coconut Boat",
@@ -59,6 +64,13 @@
   "tooltip.cozyliving.glowberry_tart_slice": "§7Tangy and delicious!",
   "tooltip.cozyliving.wand_of_hunger": "§cDebug item, sets hunger to one",
   "tooltip.cozyliving.apple_sauce": "§7Versatile baking ingredient",
+  "sounds.cozyliving.coconut_bonk": "Bonk!",
+  "death.attack.coconut_bonk": "%1$s got dunked on",
+  "death.attack.coconut_bonk.player": "%1$s got dunked on while fighting %2$s",
+
+
+
+
   "trim_material.cozyliving.benitoite": "Benitoite",
   "trim_material.cozyliving.raspberry_rhodolite": "Raspberry Rhodolite"
 }

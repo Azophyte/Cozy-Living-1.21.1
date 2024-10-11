@@ -19,6 +19,11 @@ public class CozyLivingClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RASPBERRY_BUSH, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COCONUT_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COCONUT_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COCONUT_PLANT, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COCONUT, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COCONUT_LEAVES, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COCONUT_LEAVES_CORNER, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COCONUT_SAPLING, RenderLayer.getCutout());
 
         //Colour Registry Stuff
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
@@ -27,6 +32,8 @@ public class CozyLivingClient implements ClientModInitializer {
             }
             return BiomeColors.getGrassColor(world, pos);
         }, ModBlocks.RASPBERRY_BUSH);
+
+
 
         TerraformBoatClientHelper.registerModelLayers(ModBoats.COCONUT_BOAT_ID, false);
 

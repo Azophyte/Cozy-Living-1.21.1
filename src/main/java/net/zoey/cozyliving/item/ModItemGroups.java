@@ -34,6 +34,7 @@ public class ModItemGroups {
 
                         //MATERIALS
                         entries.add(ModItems.CINNAMON_STICK);
+                        entries.add(ModBlocks.COCONUT);
 
                         //COCONUT BLOCKS
                         entries.add(ModBlocks.COCONUT_LOG);
@@ -49,6 +50,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.COCONUT_TRAPDOOR);
                         entries.add(ModBlocks.COCONUT_PRESSURE_PLATE);
                         entries.add(ModBlocks.COCONUT_BUTTON);
+                        entries.add(ModBlocks.COCONUT_LEAVES);
                             //TerraformAPI stuff
                         entries.add(ModItems.COCONUT_SIGN);
                         entries.add(ModItems.HANGING_COCONUT_SIGN);
@@ -68,6 +70,7 @@ public class ModItemGroups {
 
                         //DEBUG
                         entries.add(ModItems.WAND_OF_HUNGER);
+                        //TODO: remove coconut plant item, should not be placeable, only grown from coconut sapling as part of the tree
 
                     }).build());
 

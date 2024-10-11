@@ -17,16 +17,51 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.zoey.cozyliving.CozyLiving;
-import net.zoey.cozyliving.block.custom.RaspberryBushBlock;
-import net.zoey.cozyliving.block.custom.SliceableBlock;
+import net.zoey.cozyliving.block.custom.*;
 import net.zoey.cozyliving.foodComponents.ModFoodComponents;
 import net.zoey.cozyliving.item.ModItems;
+import net.zoey.cozyliving.sound.ModSounds;
+import net.zoey.cozyliving.world.ModConfiguredFeatures;
+
+import java.util.Optional;
 
 public class ModBlocks {
+
+    //Test blocks
+    public static final Block TEST_BLOCK = registerBlock("test_block",
+            new TestBlock(AbstractBlock.Settings.create()));
 
     //Plant blocks
     public static final Block RASPBERRY_BUSH = registerBlockWithoutItem("raspberry_bush",
             new RaspberryBushBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)));
+
+    public static final Block COCONUT = registerBlock("coconut",
+            new CoconutBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN).sounds(ModSounds.COCONUT_SOUNDS).nonOpaque().hardness(2f)));
+
+    public static final Block COCONUT_PLANT = registerBlockWithoutItem("coconut_plant",
+            new CoconutPlantBlock(AbstractBlock.Settings.copy(COCONUT)));
+
+    public static final Block COCONUT_SAPLING = registerBlock("coconut_sapling",
+            new CoconutSaplingBlock(
+                    new SaplingGenerator(
+                            CozyLiving.MOD_ID,
+                            0.1F,
+                            Optional.empty(),
+                            Optional.empty(),
+                            Optional.of(ModConfiguredFeatures.COCONUT_TREE_KEY),
+                            Optional.empty(),
+                            Optional.empty(),
+                            Optional.empty()
+                    ), AbstractBlock.Settings.copy(Blocks.JUNGLE_SAPLING)));
+    //TODO: remove coconut plant item, should not be placeable, only grown from coconut sapling as part of the tree
+
+    public static final Block COCONUT_LEAVES = registerBlock("coconut_leaves",
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.JUNGLE_LEAVES)));
+
+    public static final Block COCONUT_LEAVES_CORNER = registerBlock("coconut_leaves_corner",
+            new CoconutLeavesCornerBlock(AbstractBlock.Settings.copy(ModBlocks.COCONUT_LEAVES)));
+
+
 
     //Sliceable blocks
     public static final Block GLOWBERRY_TART = registerBlockWithoutItem("glowberry_tart",
@@ -133,6 +168,5 @@ public class ModBlocks {
 
     public static void registerModBlocks() {
         CozyLiving.LOGGER.info("Registering Mod Blocks for " + CozyLiving.MOD_ID);
-
     }
 }

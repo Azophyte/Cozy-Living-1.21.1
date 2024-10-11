@@ -1,6 +1,8 @@
-// 1.21.1	2024-10-06T14:16:19.7529783	Cozy Living/cozyliving
+// 1.21.1	2024-10-11T13:14:14.9450532	Cozy Living/cozyliving
 ca818a95c7cc890b7b4d66ab42ab606c6eb71bd5 data\cozyliving\worldgen\configured_feature\patch_raspberries.json
+5a6a717a9e6f7e16bd31ef8aef8dcf36326b7b27 data\cozyliving\worldgen\placed_feature\coconut_tree_placed.json
 b0a6075e16b47f4465a82e04d4488e18aa6b85a1 data\cozyliving\worldgen\placed_feature\raspberry_rhodolite_ore_placed.json
+30806c0b02556dcfd1e302eb4ebe339379907b16 data\cozyliving\worldgen\configured_feature\coconut_tree.json
 a0c2f6cfae2a9b708a90cdba9d12b1675a67d87b data\cozyliving\worldgen\configured_feature\raspberry_rhodolite_ore.json
 9b0e775e982eb033122b7bae148237b58091e988 data\cozyliving\worldgen\placed_feature\patch_raspberries_placed.json
 bfadc2e9f883c8a75fff33a9eb601f02c7f77d9f data\cozyliving\worldgen\configured_feature\benitoite_ore.json

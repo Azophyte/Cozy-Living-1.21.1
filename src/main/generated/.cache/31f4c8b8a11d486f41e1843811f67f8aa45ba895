@@ -1,0 +1,15 @@
+// 1.21.1	2024-10-11T13:14:14.9460499	Cozy Living/Tags for minecraft:block
+2acdee14591c48b00bfdcd10d2904af9297df749 data\minecraft\tags\block\wooden_fences.json
+0106fb26833d5ebc37bd5d4769f3dd43451f13ba data\minecraft\tags\block\mineable\pickaxe.json
+26d5193c6a542e3dd7369cc710e811b407135d59 data\minecraft\tags\block\crops.json
+d4027e838dba1b8d98ee87cbc749adc5c817eb37 data\minecraft\tags\block\fence_gates.json
+9d931f46e380dbd5ead9ac843d17b61bac4bf5cc data\minecraft\tags\block\saplings.json
+23042523598340a523ab6235aa87d68398da4bf3 data\minecraft\tags\block\beacon_base_blocks.json
+0106fb26833d5ebc37bd5d4769f3dd43451f13ba data\minecraft\tags\block\needs_iron_tool.json
+509671c2762ac4fe4dc18c0eb56f62cdc6d08ee9 data\minecraft\tags\block\wooden_trapdoors.json
+cad96633a7bf6295364eb1f40fce17a1791c6531 data\cozyliving\tags\block\coconut_logs.json
+7cff57c58c197360c73ecb7adebc45369ff74aa6 data\minecraft\tags\block\wooden_stairs.json
+254bd03ab9a84f00ebbb95a07b3b31115259ee43 data\minecraft\tags\block\wooden_slabs.json
+53d21858b66dec1983bfb519a0dfb7cc0f694d4c data\minecraft\tags\block\wooden_buttons.json
+67cf4c0a7168299b7979fc5359b0b50874760b31 data\minecraft\tags\block\wooden_pressure_plates.json
+fee7aceb629a1facede113213543726d34ece3a7 data\minecraft\tags\block\wooden_doors.json

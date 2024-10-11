@@ -7,10 +7,20 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.util.math.intprovider.IntProvider;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
+import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.trunk.BendingTrunkPlacer;
+import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.zoey.cozyliving.CozyLiving;
 import net.zoey.cozyliving.block.ModBlocks;
+import net.zoey.cozyliving.world.gen.coconut_tree.CoconutTreeFeature;
 import net.zoey.cozyliving.world.gen.raspberry_bush_patches.RaspberryBushesFeature;
+import net.zoey.cozyliving.world.tree.custom.CoconutTrunkPlacer;
 
 import java.util.List;
 
@@ -20,6 +30,8 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> RASPBERRY_RHODOLITE_ORE_KEY = registerKey("raspberry_rhodolite_ore");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_RASPBERRIES_KEY = registerKey("patch_raspberries");
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> COCONUT_TREE_KEY = registerKey("coconut_tree");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
 
@@ -42,10 +54,16 @@ public class ModConfiguredFeatures {
         register(context, RASPBERRY_RHODOLITE_ORE_KEY, Feature.ORE, new OreFeatureConfig(raspberryRhodoliteOres, 3));
 
         //RASPBERRY PATCH STUFF
-        //register(context, PATCH_RASPBERRIES_KEY, Feature.RANDOM_PATCH, ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK,
-                //new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.RASPBERRY_BUSH.getDefaultState().with(RaspberryBushBlock.AGE, 4))), List.of(Blocks.GRASS_BLOCK, Blocks.MOSS_BLOCK)));
+
         register(context, PATCH_RASPBERRIES_KEY, RaspberryBushesFeature.RASPBERRY_BUSHES, new DefaultFeatureConfig());
 
+        /*register(context, COCONUT_TREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.COCONUT_LOG),
+                        new StraightTrunkPlacer(4, 4, 4),
+                        BlockStateProvider.of(ModBlocks.COCONUT_LEAVES),
+                        new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0),2),
+                        new TwoLayersFeatureSize(3, 0, 3)).build());*/
+        register(context, COCONUT_TREE_KEY, CoconutTreeFeature.COCONUT_TREE, new DefaultFeatureConfig());
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey (String name){

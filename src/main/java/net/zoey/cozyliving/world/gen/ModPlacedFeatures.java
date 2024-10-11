@@ -9,6 +9,7 @@ import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
 import net.zoey.cozyliving.CozyLiving;
+import net.zoey.cozyliving.block.ModBlocks;
 import net.zoey.cozyliving.world.ModConfiguredFeatures;
 
 import java.util.List;
@@ -20,6 +21,8 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> PATCH_RASPBERRIES_PLACED_KEY = registerKey("patch_raspberries_placed");
     public static final RegistryKey<PlacedFeature> BENITOITE_ORE_PLACED_KEY = registerKey("benitoite_ore_placed");
     public static final RegistryKey<PlacedFeature> RASPBERRY_RHODOLITE_ORE_PLACED_KEY = registerKey("raspberry_rhodolite_ore_placed");
+
+    public static final RegistryKey<PlacedFeature> COCONUT_TREE_PLACED_KEY = registerKey("coconut_tree_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -34,6 +37,10 @@ public class ModPlacedFeatures {
 
 
         register(context, PATCH_RASPBERRIES_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PATCH_RASPBERRIES_KEY),
+                RarityFilterPlacementModifier.of(31), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,
+                BiomePlacementModifier.of());
+
+        register(context, COCONUT_TREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.COCONUT_TREE_KEY),
                 RarityFilterPlacementModifier.of(31), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP,
                 BiomePlacementModifier.of());
 
